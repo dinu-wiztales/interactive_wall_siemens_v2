@@ -10,7 +10,7 @@ Window {
     height: 800
     title: qsTr("Interactive Wall Siemens")
 
-    visibility:"FullScreen"
+    visibility: "Windowed"
 
     property var speed: 20000
     property var elementWidth: 800
@@ -254,7 +254,7 @@ Window {
                     anchors.fill: parent
                     onClicked: {
                         redDataBase.state = "moved"
-                        content.text = "<h2><u>What's next after smart buildings</u></h2>\nA smart city that uses the digital twin capability and is built on the Mindsphere native platform to reduce energy consumption, use clean energy, minimize potable water consumption and more while ensuring efficient operations and a great visitor experience. Protocols like OPC UA, MQTT, BACNet, ModBus, HTTPS, and HTTPS push work hard behind the scenes to connect the large number of sensors and gateways that enable bi-directional monitor and control. This customized IOT agent will enable 25 million visitors have a great time at the Dubai Expo 2020."
+                        content.text = "<h2><u>What's next after smart buildings</u></h2> <br><br>A smart city that uses the digital twin capability and is built on the Mindsphere native platform to reduce energy consumption, use clean energy, minimize potable water consumption and more while ensuring efficient operations and a great visitor experience. Protocols like OPC UA, MQTT, BACNet, ModBus, HTTPS, and HTTPS push work hard behind the scenes to connect the large number of sensors and gateways that enable bi-directional monitor and control. This customized IOT agent will enable 25 million visitors have a great time at the Dubai Expo 2020."
                         redsideData.text = "<h1><u>DUBAI EXPO APP                                             </u></h1>"
                         redVideo.source = "file:///C:/Users/Wiztales/Documents/build-interactive_wall_siemens_v2-Desktop_Qt_5_13_1_MinGW_64_bit-Debug/debug/assests/SiemensInteractiveWallData/content/innovationandyou/dubaiexpoapp/dubaiexpo.mp4"
                         redVideo.play()
@@ -442,7 +442,7 @@ Window {
 
         Column {
             id:columnred
-//            spacing:
+            spacing: 5
             anchors.centerIn: parent
 
             Component.onCompleted: {
@@ -451,16 +451,16 @@ Window {
             }
             AnimatedImage {
                 id: redIcon
-                source: "file:///C:/Users/Wiztales/Documents/build-interactive_wall_siemens_v2-Desktop_Qt_5_13_1_MinGW_64_bit-Debug/debug/assests/Animation GIFS/2.gif"
+                source: "file:///C:/Users/Wiztales/Documents/build-interactive_wall_siemens_v2-Desktop_Qt_5_13_1_MinGW_64_bit-Debug/debug/assests/Animation GIFS/1.gif"
                 width: redCenter.width/2
-                height: redCenter.height/2
+                height: (redCenter.height/2)/0.79
             }
             Text {
                 id: redName
-                text: qsTr("POWERING GRIDS")
+                text: qsTr("INNOVATION AND YOU")
                 color: "white"
                 wrapMode: Text.Wrap
-                font.pointSize: 12
+                font.pointSize: 11
                 font.family: dinAlternate_Bold.name
                 smooth: true
             }
@@ -528,8 +528,11 @@ Window {
 
                     Text {
                         id: redsideData
+                        y : 0
+                        anchors.left: parent.left
                         anchors.bottom: parent.bottom
-                        anchors.bottomMargin: 100
+                        anchors.bottomMargin: 80
+                        anchors.leftMargin: 350
                         text: "<u><h2>HU</h2></u>"
                         rotation: 270
                         color: "white"
@@ -540,18 +543,25 @@ Window {
                     Rectangle {
 
                         color: "transparent"
-                        width: parent.width/3
-                        height: parent.height
-                        //                        border.color: "black"
+                        anchors.left: parent.left
+                        anchors.leftMargin: 540
+                        anchors.bottom: parent.bottom
+                        anchors.bottomMargin: 10
+                        width: 120
+                        height: 151.2
+//                                                border.color: "black"
 
 
                         AnimatedImage {
                             id: redanimation;
-                            y: 0
-                            anchors.left: parent.left
-                            width: parent.width+100
-                            height: parent.height+100
-                            anchors.leftMargin: -70
+//                            y: 0
+//                            anchors.left: parent.left
+//                            anchors.bottom: parent.bottom
+//                            anchors.bottomMargin: 80
+//                            width: parent.width/4
+//                            height: parent.height/4
+//                            anchors.leftMargin: -70
+                            anchors.fill: parent
                             source: "file:///" + applicationDirPath + "/assests/Animation GIFS/1.gif"
                         }
                     }
@@ -748,7 +758,7 @@ Window {
                 Text {
                     id: lightBluedataOne
                     anchors.centerIn: parent
-                    text: qsTr("one")
+                    text: qsTr("AOM")
                     color: "white"
                     font.family: dinAlternate_Bold.name
                     RotationAnimation on rotation {
@@ -783,6 +793,10 @@ Window {
                     anchors.fill: parent
                     onClicked: {
                         lightBlueDataBase.state = "moved"
+                        bluecontent.text = "<h2><u>Keeping medium voltage switchgear devices powered!</u></h2>\n\n Maintenance of switchgears are critical and heavily dependent on the skill level of the service engineers. With the changing demographics leading to senior resources retiring; guaranteeing high level of service accuracy of devices and panels like 8BK80, NXAir etc. with limited domain knowledge was becoming a challenge. The Augmented Operations and Maintenance (AOM) used mobile devices and AR/VR tech to provide detailed step by step instructions for service engineers that bridge the expertise gap with inbuilt domain knowledge. Built on Unity, 3DSMax and MaxST, Backend on ASP .Net, and a few other technologies, this solution can be integrated to the plant database. This makes ordering spare parts a breeze, and packs enough intelligence to enable the site engineers handle L1 and L2 support tickets. Started as a PoC, this solution turned into a 300 K EUR project."
+                        lightBluesideData.text = "<h1><u>AOM</u></h1>"
+//                        lightBlueBussinessSuite.text = "DTS"
+                        lightblueanimation.visible = false
                     }
                 }
 
@@ -1079,18 +1093,18 @@ Window {
                 for (var item in children)
                     children[item].anchors.horizontalCenter = columnLightBlue.horizontalCenter;
             }
-            Image {
+            AnimatedImage {
                 id: lightBlueIcon
-                source: "qrc:/assests/icons/lightBlueIcon.png"
-                width: lightBlueCenter.width/2.5
-                height: width
+                source: "file:///C:/Users/Wiztales/Documents/build-interactive_wall_siemens_v2-Desktop_Qt_5_13_1_MinGW_64_bit-Debug/debug/assests/Animation GIFS/2.gif"
+                width: lightBlueCenter.width/2
+                height: (lightBlueCenter.height/2)/0.83
             }
             Text {
                 id: lightBlueName
                 text: qsTr("POWERING GRIDS")
                 color: "white"
                 wrapMode: Text.Wrap
-                font.pointSize: 7
+                font.pointSize: 12
                 font.family: dinAlternate_Bold.name
                 smooth: true
             }
@@ -1129,6 +1143,11 @@ Window {
                         height: parent.height
                         color: "transparent"
                         border.color: "black"
+                        Video {
+                            id:lightBlueVideo
+                            anchors.fill: parent
+                            autoPlay: true
+                        }
 
                     }
 
@@ -1150,7 +1169,7 @@ Window {
 
 
                         AnimatedImage {
-                            id: blueanimation;
+                            id: lightblueanimation;
                             y: 0
                             anchors.left: parent.left
                             width: parent.width+100
@@ -1172,7 +1191,7 @@ Window {
                 width: parent.width/1.5
                 height: parent.height/3
                 Text {
-                    id: bluecontent
+                    id: lightbluecontent
                     width: parent.width
                     height: parent.height
                     color: "white"
@@ -1206,7 +1225,7 @@ Window {
                 color: orangeColor
                 radius: width
                 Text {
-                    id: bluedumb
+                    id: lightbluedumb
                     anchors.centerIn: parent
                     color: "white"
                     text: qsTr("X")
