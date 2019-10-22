@@ -1,5 +1,15 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>assests/fonts/Adequate-Medium.ttf</file>
+        <file>assests/fonts/D-DINCondensed-Bold.otf</file>
+        <file>assests/fonts/D-DINCondensed.otf</file>
+        <file>assests/fonts/DIN Alternate Bold.ttf</file>
+        <file>assests/icons/lightBlue.png</file>
+        <file>assests/icons/blueIcon.png</file>
+        <file>assests/icons/lightBlueIcon.png</file>
+        <file>assests/icons/orangeIcon.png</file>
+        <file>assests/icons/redIcon.png</file>
+        <file>assests/images/white.png</file>
     </qresource>
 </RCC>
