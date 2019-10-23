@@ -11,5 +11,7 @@
         <file>assests/icons/orangeIcon.png</file>
         <file>assests/icons/redIcon.png</file>
         <file>assests/images/white.png</file>
+        <file>FinalBase.qml</file>
+        <file>componentCreation.js</file>
     </qresource>
 </RCC>
