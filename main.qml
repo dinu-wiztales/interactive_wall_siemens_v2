@@ -765,7 +765,7 @@ Window {
         Rectangle {
             id:redDataBase
             anchors.centerIn: parent
-            width: parent.width/100   //parent.width/100
+            width: parent.width/100  //parent.width/100
             height: width
             radius: width
             color:redColor
@@ -778,19 +778,227 @@ Window {
                 id:redMain
                 visible: redDataBase.width === redrotatingImage.width ? true : false
                 anchors.fill: parent
-                border.color: "black"
+//                border.color: "black"
                 color: "transparent"
-                Column {
-                    anchors.top: parent.top
-                    Video {
-                        id:redVideo
-                         width: 400
-                         height: 400
+//                FinalBase {_width : redDataBase.width}
+
+
+
+                Column{
+                    anchors.centerIn: parent
+
+
+
+                    Rectangle {
+                        height: redMain.height/3
+                        width: redMain.width
+                        color: "transparent"
+            //            border.color: "black"
+
+                        Rectangle {
+                            width: parent.width
+                            height: (parent.height/3)*2
+                            color: "transparent"
+                            Rectangle {
+                                anchors.left: parent.left
+                                anchors.top: parent.top
+                                width: parent.width/2
+                                height: parent.height
+                                color: "transparent"
+                                Rectangle {
+                                    anchors.left: parent.left
+                                    anchors.leftMargin: parent.width/12
+            //                        anchors.verticalCenter: parent.verticalCenter
+                                    width: parent.width - 60
+                                    height: parent.height
+                                    color: "transparent"
+                                 layer.enabled: true
+                                 layer.effect : Glow {
+                                     samples :3
+                                     color: "black"
+                                     transparentBorder: true
+                                 }
+
+                                    Video {
+                                        anchors.fill: parent
+                                        source: "file:///C:/Users/Wiztales/Documents/build-interactive_wall_siemens_v2-Desktop_Qt_5_13_1_MinGW_64_bit-Debug/debug/assests/SiemensInteractiveWallData/content/innovationandyou/dubaiexpoapp/dubaiexpo.mp4"
+                                        autoPlay: true
+                                        muted: true
+                                        loops: MediaPlayer.Infinite
+                                    }
+
+
+
+                                }
+
+                                Rectangle {
+                                    height: parent.height
+                                    width: parent.width/4
+                                    anchors.right: parent.right
+                                    anchors.rightMargin: - parent.width/4
+                                    color: "transparent"
+                                    Text {
+                                        x: -16
+//                                        anchors.left: parent.left
+//                                        anchors.bottom: parent.bottom
+//                                        anchors.bottomMargin: parent.height/12
+                                        anchors.verticalCenter: parent.verticalCenter
+                                        anchors.bottom: parent.bottom
+                                        anchors.right: parent.right
+                                        text: qsTr("KIOSK APP")
+                                        anchors.verticalCenterOffset: 27
+                                        anchors.rightMargin: 0
+                                        anchors.bottomMargin: -14
+                                        font.family: dinCondensed_Bold.name
+                                        font.pointSize: 20
+                                        font.bold: true
+                                        color: "white"
+                                        rotation: 270
+                                    }
+                                }
+                            }
+
+                        Rectangle {
+                            id:animtionSpace
+                            height: parent.height
+                            width: parent.width/3
+                            anchors.right: parent.right
+                            anchors.rightMargin: parent.width/8
+                            color: "transparent"
+                            AnimatedImage {
+                                anchors.centerIn: parent
+                                source: "file:///C:/Users/Wiztales/Documents/build-interactive_wall_siemens_v2-Desktop_Qt_5_13_1_MinGW_64_bit-Debug/debug/assests/Animation GIFS/1.gif"
+                                width: parent.width/2
+                                height: parent.height
+
+
+                            }
+                        }
+
+                        }
+
+                        Rectangle {
+                            anchors.bottom: parent.bottom
+                            width: parent.width
+                            color: "transparent"
+                            height: parent.height/4
+                            Text {
+                                anchors.left: parent.left
+                                anchors.leftMargin: parent.width/12
+                                font.family: dinCondensed_Bold.name
+                                color: "white"
+                                font.bold: true
+                                font.pointSize: 20
+                                text: qsTr("Dummmy Heading data is here")
+                            }
+                        }
+
+                        Rectangle {
+                            anchors.bottom: parent.bottom
+//                            anchors.bottomMargin: parent.height/6
+                            color: "transparent"
+                            width: parent.width
+                            height: parent.height/8
+                            Rectangle {
+                                anchors.left: parent.left
+                                anchors.verticalCenter: parent.verticalCenter
+                                anchors.leftMargin: parent.width/12
+                                width: parent.width/2
+                                color: "white"
+                                height: parent.height/20
+                            }
+                        }
+
+
+
+                    }
+
+                    Rectangle {
+                        height: redMain.height/3
+                        width: redMain.width
+                        color: 'transparent'
+                        border.color: 'black'
+                        Row {
+                            spacing: 5
+                            Rectangle {
+                                width: redDataBase.width
+                                height: redDataBase.height/6
+                                color: "transparent"
+                                Text {
+                                    font.family: dinAlternate_Bold.name
+                                    color: "white"
+                                    font.pointSize: 13
+                                    wrapMode: Text.Wrap
+                                    text: qsTr("Do a quick hearing test with the Kiosk App, that enables your smart mobile device become an audiometry device. Powered by audiological details and test labs from Sivantos, the AU Fitting Apps team helps you to check your hearing ability and suggest a suitable hearing aid with effective configurations")
+                                }
+                            }
+
+
+                        }
                     }
                 }
 
+                Rectangle {
+                    anchors.bottom: parent.bottom
+                    width: parent.width
+                    height: parent.height/6
+                    color: "transparent"
+//                    border.color: "black"
+                    Rectangle {
+                        anchors.left: parent.left
+                        height: parent.height
+                        width: parent.width/2
+                        color: "transparent"
+                        Rectangle {
+                            anchors.verticalCenter: parent.verticalCenter
+                            anchors.left: parent.left
+                            anchors.leftMargin: parent.width/3
+                            height: redDataBase.height/24
+                            width: redDataBase.width/6
+                            color: orangeColor
+                        }
+                        Text {
 
+                            id: businessSuite
+                            anchors.verticalCenter: parent.verticalCenter
+                            anchors.right: parent.right
+                            anchors.rightMargin: parent.width/4
+                            font.bold: true
+                            font.pointSize: 12
+                            font.family: dinAlternate_Bold.name
+                            color: "white"
+                            text: qsTr("BT")
+                        }
 
+                    }
+
+                    Rectangle {
+                        anchors.right: parent.right
+                        color: "transparent"
+                        height: parent.height
+                        width: parent.width/2
+                        Rectangle {
+                            anchors.centerIn: parent
+                            width: parent.width/9
+                            height: width
+                            radius: width
+                            color: orangeColor
+                            Text {
+                                anchors.centerIn: parent
+                                text: qsTr("X")
+                                color: "white"
+                                font.bold: true
+                                font.pointSize: 12
+                            }
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: {
+                                    redDataBase.state = "small"
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
             states:[

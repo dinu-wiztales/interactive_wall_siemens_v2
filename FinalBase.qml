@@ -16,7 +16,7 @@ Rectangle {
     property var _heading
     property var _content
     property var _extraContent
-    property var _suite
+//    property var _suite
     property var _extraContentVisible
 
     //    property var name
@@ -24,20 +24,51 @@ Rectangle {
     Column {
         anchors.centerIn: parent
         Rectangle {
-            height: root.height/4
+            height: root.height/3
             width: root.width
+            color: "transparent"
             border.color: "black"
-        }
-        Rectangle {
+//            border.color: "black"
+
+            Rectangle {
+                width: parent.width
+                height: (parent.height/3)*2
+                Rectangle {
+                    anchors.left: parent.left
+                    anchors.top: parent.top
+                    width: parent.width/2
+                    height: parent.height
+                    color: "red"
+                    Rectangle {
+                        anchors.left: parent.left
+//                        anchors.verticalCenter: parent.verticalCenter
+                        width: parent.width/3
+                        height: parent.height
+                    }
+                }
+            }
+
+
+
 
         }
+        Rectangle {
+            height: root.height/3
+            width: root.width
+            color: 'transparent'
+        }
+//        Rectangle {
+//            height: root.height/4
+//            width: root.width
+//            color: "yellow"
+//        }
     }
 
 
-    color: "red"
+    color: "transparent"
     width: _width
     height: width
-    radius: parent.width
+//    radius: parent.width
 
 
 
